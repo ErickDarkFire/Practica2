@@ -1,0 +1,24 @@
+name: Test action
+
+on:
+  push:
+    branches:
+      - main
+      - feature_a
+      - feature_b
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probar Action
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Push en rama ${{ github.ref_name }}"
+          to: "erickrodriguezgomez04@gmail.com"
+          from: "Erick"
+          body: "Se hizo push en la rama ${{ github.ref_name }}"
