@@ -1,7 +1,11 @@
 name: Test action
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - feature_a
+      - feature_b
 
 jobs:
   test:
@@ -14,7 +18,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "Test"
+          subject: "Push en rama ${{ github.ref_name }}"
           to: "erickrodriguezgomez04@gmail.com"
           from: "Erick"
-          body: "Prueba de correo"
+          body: "Se hizo push en la rama ${{ github.ref_name }}"
