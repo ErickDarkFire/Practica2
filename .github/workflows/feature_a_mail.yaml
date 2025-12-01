@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enviar correo
-        uses: ErickDarkFire/Practica2
+        uses: ErickDarkFire/Practica2@main
         with:
           server_address: smtp.gmail.com
           server_port: 465
