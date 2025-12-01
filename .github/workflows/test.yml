@@ -1,4 +1,4 @@
-name: Test action externa
+name: Test action
 
 on:
   workflow_dispatch:
@@ -7,14 +7,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Probar Action externa
+      - name: Probar Action
         uses: ErickDarkFire/Practica2@main
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "Test desde repo externo"
-          to: "tuemail@gmail.com"
+          subject: "Test"
+          to: "erickrodriguezgomez04@gmail.com"
           from: "Erick"
-          body: "Prueba desde otro repositorio"
+          body: "Prueba de correo"
